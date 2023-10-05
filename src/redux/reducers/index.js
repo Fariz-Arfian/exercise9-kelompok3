@@ -6,8 +6,8 @@ const initialState = {
 	countCart: 0,
 };
 
-export const counter = createSlice({
-	name: "counter",
+export const product = createSlice({
+	name: "product",
 	initialState,
 	reducers: {
 		addTocart: (state, actions) => {
@@ -35,6 +35,6 @@ export const counter = createSlice({
 	},
 });
 
-export const { addTocart, removeFromCart } = counter.actions;
+export const { addTocart, removeFromCart } = product.actions;
 
-export default counter.reducer;
+export default product.reducer;
