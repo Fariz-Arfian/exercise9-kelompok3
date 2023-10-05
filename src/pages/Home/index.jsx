@@ -5,6 +5,7 @@ import { Navbar } from "../../components/Navbar";
 import { Allproducts } from "../../App";
 // import Img from "../../assets/powerbankbaseus.webp"
 import {
+	Stack,
 	Box,
 	SimpleGrid,
 	Card,
@@ -43,7 +44,7 @@ export const Home = () => {
 					alignItems={"center"}
 				>
 					<SimpleGrid
-						spacing={10}
+						spacing={3}
 						templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
 						w={"1100px"}
 					>
@@ -51,9 +52,11 @@ export const Home = () => {
 							<>
 								<div key={index}>
 									<Card
-										border={"1px solid black"}
-										p={"10px"}
+										border={"1px solid #F0FFF4"}
+										p={"15px"}
 										h={"350px"}
+										borderRadius="lg"
+										boxShadow="md"
 									>
 										<CardHeader
 											h={"170px"}
@@ -63,29 +66,33 @@ export const Home = () => {
 										>
 											<Heading>IMG</Heading>
 										</CardHeader>
-										<CardBody textAlign={"start"}>
-											<Text h={"48px"}>{items.nameProduct}</Text>
-											<Text fontWeight={"700"}>
-												{items.hargaProduct}
-											</Text>
-											<Text fontSize={"12px"}>{items.storeName}</Text>
-											<Text fontSize={"12px"}>
-												{items.storeLocation}
-											</Text>
+
+										<CardBody>
+										<Stack spacing=".5" textAlign={"start"}>
+										<Text fontSize="md" >{items.nameProduct}</Text>
+										<Text fontSize="lg" color="green.900" fontWeight={"700"}>
+											{items.hargaProduct}
+										</Text>
+										<Text fontSize={"12px"} fontWeight={"bold"}>{items.storeName}</Text>
+										<Text fontSize={"12px"}>
+											{items.storeLocation}</Text>
+										</Stack>
 										</CardBody>
 										<CardFooter
-											justifyContent={"end"}
-											position={"absolute"}
-											bottom={"2"}
-                                            right={"2"}
+											justifyContent={"start"}
+											
 										>
 											<Button
 												onClick={() => dispatch(addTocart(items))}
-												bgColor={"blue.400"}
-												p={"6px 10px"}
-												mt={"10px"}
+												bgColor={"green.900"}
+												color={"white"}
+												p={"10px 10px 10px 10px"}
+												mt={"15px"}
+												mb={"10px"}
+												w="100%"
+												boxShadow={"lg"}
 											>
-												+Keranjang
+												+ Add to cart
 											</Button>
 										</CardFooter>
 									</Card>
