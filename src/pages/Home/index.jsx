@@ -39,6 +39,7 @@ export const Home = () => {
 					w={"90%"}
 					justifyContent={"center"}
 					alignItems={"center"}
+					mt={"50px"}
 				>
 					<SimpleGrid
 						spacing={3}
@@ -61,12 +62,19 @@ export const Home = () => {
 											display={"flex"}
 											justifyContent={"center"}
 										>
-											<Image h={"170px"} src={items.imgProduct}/>
+											<Image h={"170px"} src={items.imgProduct} />
 										</CardHeader>
 
 										<CardBody>
 											<Stack spacing=".5" textAlign={"start"}>
-												<Text overflow={"hidden"} h={"48px"} mt={"5px"} fontSize="md">{items.nameProduct}</Text>
+												<Text
+													overflow={"hidden"}
+													h={"48px"}
+													mt={"5px"}
+													fontSize="md"
+												>
+													{items.nameProduct}
+												</Text>
 												<Text
 													fontSize="lg"
 													color="green.900"
@@ -92,7 +100,12 @@ export const Home = () => {
 												mb={"10px"}
 												w="100%"
 												boxShadow={"lg"}
-												_hover={{color: "green.900", bgColor: "white", border: "1px solid", borderColor: "green.900"}}
+												_hover={{
+													color: "green.900",
+													bgColor: "white",
+													border: "1px solid",
+													borderColor: "green.900",
+												}}
 											>
 												+ Add to cart
 											</Button>

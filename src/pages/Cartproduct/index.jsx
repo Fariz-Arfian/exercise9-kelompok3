@@ -6,6 +6,8 @@ import { removeFromCart } from "../../redux/reducers";
 import { useState } from "react";
 import { Box, Text, Button, Image } from "@chakra-ui/react";
 import { MinusIcon, AddIcon, DeleteIcon } from "@chakra-ui/icons";
+import { Navbar } from "../../components/Navbar";
+import { ArrowLeft } from "@phosphor-icons/react"
 
 export default function Cart() {
 	const allItems = useSelector((state) => state.product.value);
@@ -43,14 +45,16 @@ export default function Cart() {
 		<Box
 			w="100vw"
 			minH="100vh"
-			padding="50px"
 			display="flex"
 			flexDirection="column"
 			justifyContent="start"
 			bgColor="white"
 		>
-			<Box w="fit-content">
-				<Link to="/">Back</Link>
+			<Box w={"100%"}>
+					<Navbar />
+				</Box>
+			<Box w="fit-content" ml={"50px"}>
+				<Link to="/"><ArrowLeft size={32} /></Link>
 			</Box>
 			<Box
 				display="flex"
@@ -58,6 +62,7 @@ export default function Cart() {
 				flexDirection="column"
 				justifyContent={"center"}
 				alignItems={"center"}
+				mt={"50px"}
 			>
 				<Text fontSize={"20px"} fontWeight={"600"} mb={"20px"}>
 					Keranjang
@@ -178,9 +183,9 @@ export default function Cart() {
 							flexDirection={"column"}
 						>
 							<Text>Wah, Keranjang belanjamu kosong</Text>
-							<Text>Yuk, isi dengan barang-barng impianmu!</Text>
+							<Text mb={"20px"}>Yuk, isi dengan barang-barng impianmu!</Text>
 							<Link to="/">
-								<Button>Mulai Belanja</Button>
+								<Button p={"10px 18px"} bgColor={"green.900"} color={"white"} _hover={{opacity: "85%"}}>Mulai Belanja</Button>
 							</Link>
 						</Box>
 					</Box>
