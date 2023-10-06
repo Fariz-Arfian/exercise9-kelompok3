@@ -17,16 +17,16 @@ export const Navbar = () => {
 			justifyContent={"center"}
 		>
 			<Stack
-				spacing={10}
+				spacing={{base: "5", md:"10"}}
 				direction={"row"}
 				p={"20px"}
 				h={"100%"}
-				w={"70%"}
+				w={{base: "100%", lg: "70%"}}
 				alignItems={"center"}
 				display={"flex"}
-				justifyContent={"space-around"}
+				justifyContent={"space-between"}
 			>
-				<Box fontFamily={"'Pixelify Sans', cursive"} fontSize={"24px"}>
+				<Box fontFamily={"'Pixelify Sans', cursive"} fontSize={{base: "16px",md: "24px"}}>
 					<Link to="/">Kelompok 3</Link>
 				</Box>
 				<Box>
@@ -35,8 +35,9 @@ export const Navbar = () => {
 						placeholder="Search"
 						h={"20px"}
 						p={"20px"}
-						w={"500px"}
+						w={{sm: "300px",lg: "500px"}}
 						borderRadius={"10px"}
+						display={{base: "none", md: "block"}}
 					/>
 				</Box>
 
@@ -51,11 +52,11 @@ export const Navbar = () => {
 						h={"100%"}
 						display={"flex"}
 						justifyContent={"end"}
-						p={"10px"}
+						p={{base: "0", md: "10px"}}
 						alignItems={"center"}
 					>
 						<Link to="/cart">
-							<ShoppingCartSimple size={26} />
+							<ShoppingCartSimple size={20} />
 						</Link>
 						<Text
 							position={"relative"}
@@ -78,12 +79,12 @@ export const Navbar = () => {
 						w={"100%"}
 						h={"100%"}
 						display={"flex"}
-						justifyContent={"end"}
-						p={"10px"}
+						justifyContent={"center"}
+						p={{base: "0", md: "10px"}}
 						alignItems={"center"}
 					>
-						<Link to="/cart">
-							<Bell size={26} />
+						<Link to="">
+							<Bell size={20} />
 						</Link>
 						<Text
 							position={"relative"}
@@ -107,11 +108,11 @@ export const Navbar = () => {
 						h={"100%"}
 						display={"flex"}
 						justifyContent={"end"}
-						p={"10px"}
+						p={{base: "0", md: "10px"}}
 						alignItems={"center"}
 					>
-						<Link to="/cart">
-							<EnvelopeSimple size={32} />
+						<Link to="">
+							<EnvelopeSimple size={20} />
 						</Link>
 						<Text
 							position={"relative"}
@@ -131,7 +132,7 @@ export const Navbar = () => {
 						</Text>
 					</Box>
 					<Box>
-						<Avatar bg="green.900" w={"40px"} />
+						<Avatar bg="green.900" w={{base: "30px",md: "40px"}} h={{base: "30px",md: "40px"}} />
 					</Box>
 				</Box>
 			</Stack>

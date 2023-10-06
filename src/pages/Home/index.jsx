@@ -3,6 +3,8 @@
 import { useDispatch } from "react-redux";
 import { Navbar } from "../../components/Navbar";
 import { Allproducts } from "../../App";
+// import axios from "axios";
+
 // import Img from "../../assets/powerbankbaseus.webp"
 import {
 	Stack,
@@ -16,11 +18,21 @@ import {
 	Button,
 	Image,
 } from "@chakra-ui/react";
-
 import { addTocart } from "../../redux/reducers";
+// import { useState } from "react";
+
+
 export const Home = () => {
 	// const product = useSelector((state) => state.counter.nameProduct);
+	// const [data, setData] = useState()
 	const dispatch = useDispatch();
+
+	// const fatcData = async () => {
+	// 	try {
+	// 		const respons = await axios.get("")
+	// 		setData(respons.data)
+	// 	}
+	// }
 
 	return (
 		<Box w={"100vw"} minH={"100vh"} mb={"50px"}>
@@ -39,7 +51,7 @@ export const Home = () => {
 					w={"90%"}
 					justifyContent={"center"}
 					alignItems={"center"}
-					mt={"50px"}
+					mt={{base: "10px", md: "50px" }}
 				>
 					<SimpleGrid
 						spacing={3}
@@ -51,7 +63,7 @@ export const Home = () => {
 								<div key={index}>
 									<Card
 										border={"1px solid #F0FFF4"}
-										p={"15px"}
+										// p={"15px"}
 										h={"375px"}
 										borderRadius="lg"
 										boxShadow="md"
@@ -65,7 +77,7 @@ export const Home = () => {
 											<Image h={"170px"} src={items.imgProduct} />
 										</CardHeader>
 
-										<CardBody>
+										<CardBody p={"0 20px"}>
 											<Stack spacing=".5" textAlign={"start"}>
 												<Text
 													overflow={"hidden"}
@@ -90,14 +102,14 @@ export const Home = () => {
 												</Text>
 											</Stack>
 										</CardBody>
-										<CardFooter justifyContent={"start"}>
+										<CardFooter justifyContent={"start"} p={"0px 20px"}>
 											<Button
 												onClick={() => dispatch(addTocart(items))}
 												bgColor={"green.900"}
 												color={"white"}
 												p={"10px 10px 10px 10px"}
-												mt={"15px"}
-												mb={"10px"}
+												// mt={"15px"}
+												mb={"25px"}
 												w="100%"
 												boxShadow={"lg"}
 												_hover={{
